@@ -7,6 +7,7 @@ const mysql = require('mysql');
 const myConnection = require('express-myconnection');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+require('dotenv').config();
 
 var app = express();
 
@@ -20,12 +21,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 /*Conexión MySQL*/
+
+
+
+
 app.use(myConnection(mysql,{
-  host:'localhost',
-  user: 'root',
-  password: '',
-  port:3306,
-  database:'dentalfenix'
+  host: process.env.HOSTSECRET,
+  user: process.env.USERSECRET,
+  password: process.env.PASSWORDSECRET,
+  port:process.env.PORTSECRET,
+  database:process.env.DATABASESECRET
 },'single'));
 
 
