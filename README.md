@@ -1,4 +1,4 @@
-<h1 align="center">Dental Fenix✔</h1>
+<h1 align="center">Project - Dental Fenix✔</h1>
 <h2>Tecnologias usadas: </h2>
 <p>HTML</p>
 <p>CSS</p>
