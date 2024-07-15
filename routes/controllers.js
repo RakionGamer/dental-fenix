@@ -53,20 +53,9 @@ controller.user = async (req, res) => {
     const data = req.body;
     const user = data.user
     const password = data.password
-    req.getConnection((err, conn) => {
-        conn.query("SELECT * FROM users WHERE user = ? AND password = ?", [user, password], (err, row) => {
-            if (row.length > 0) {
-                const token = jwt.sign({ id: 1 }, 'token');
-                res.cookie('jwt', token);
-                res.redirect('/');
-            }
-            else{
-                const token = jwt.sign({ id: 1 }, 'token');
-                res.cookie('jwt', token);
-                res.redirect('/');
-            }
-        })
-    })
+    const token = jwt.sign({ id: 1 }, 'token');
+    res.cookie('jwt', token);
+    res.redirect('/');
 }
 
 controller.userRegister = async (req, res) => {
