@@ -16,3 +16,16 @@
     <td>#2</th>
   </tr>
 </table>
+
+**Sistema de Inventario**
+<ul>
+  <li>
+    Backend: NodeJS/Express.
+  </li>
+  <li>
+    Fronted: HTML/CSS Nativo.
+  </li>
+  <li>
+    Auth: JsonWebToken.
+  </li>
+</ul>
