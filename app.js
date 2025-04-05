@@ -20,23 +20,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-/*Conexión MySQL*/
-
-
-
 
 app.use(myConnection(mysql,{
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  port: 3306,
-  database: 'dental_fenix'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+  database: process.env.DB_DATABASE,
 },'single'));
-
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
 
 
 // catch 404 and forward to error handler
