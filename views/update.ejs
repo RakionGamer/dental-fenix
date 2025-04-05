@@ -1,0 +1,79 @@
+<% include header %>
+
+
+    <main>
+        <div class="pin-pon update">
+            <div class="effect">
+                <form action="/edit/<%= data[0].id_product %>" class="update" method="POST">
+                    <div class="_position-input">
+
+                        <input type="text" placeholder="Ingrese el id" name="id_product"
+                            value="<%= data[0].id_product %>" required>
+                        <label for="">ID</label>
+                    </div>
+                    <div class="_position-input">
+                        <input type="text" placeholder="Ingrese el nombre" pattern="^[A-Za-z]+$" title="No se permiten numeros en el nombre." name="name" value="<%= data[0].name %>"
+                            required>
+                        <label for="">Nombre</label>
+                    </div>
+                    <div class="_position-input">
+                        <input type="text" placeholder="Ingrese el precio" name="price" step="any" value="<%= data[0].price %>"
+                            required>
+                        <label for="">Precio</label>
+                    </div>
+                    <div class="_position-input">
+                        <input type="date" name="fi" value="<%= data[0].fi %>" required>
+                        <label for="">Fec. Ingreso</label>
+                    </div>
+                    <div class="_position-input">
+                        <input type="date" name="fc" value="<%= data[0].fc %>" required>
+                        <label for="">Fec. Caducidad</label>
+                    </div>
+                    <div class="_position-input">
+                        <input type="number" min="0" name="stock" placeholder="Ingrese el stock"
+                            value="<%= data[0].stock %>" required>
+                        <label for="">Stock</label>
+                    </div>
+                    <div class="submit">
+                        <button type="submit">Enviar</button>
+                    </div>
+            </div>
+        </div>
+        </form>
+        <form action="/edit/<%= data[0].id%>" class="form-mobile top" method="POST">
+            <div class="_position-input">
+                <input type="text" placeholder="Ingrese el id" name="id_product" value="<%= data[0].id_product %>"
+                    required>
+                <label for="">ID</label>
+            </div>
+            <div class="_position-input">
+                <input type="text" placeholder="Ingrese el nombre" pattern="^[A-Za-z]+$" title="No se permiten numeros en el nombre." name="name" value="<%= data[0].name %>" required>
+                <label for="">Nombre</label>
+            </div>
+            <div class="_position-input">
+                <input type="text" placeholder="Ingrese el precio" name="price" step="any" value="<%= data[0].price %>" required>
+                <label for="">Precio</label>
+            </div>
+            <div class="_position-input">
+                <input type="date" name="fi" value="<%= data[0].fi %>" required>
+                <label for="">Fec. Ingreso</label>
+            </div>
+            <div class="_position-input">
+                <input type="date" name="fc" value="<%= data[0].fc %>" required>
+                <label for="">Fec. Caducidad</label>
+            </div>
+            <div class="_position-input">
+                <input type="number" min="0" name="stock" placeholder="Ingrese el stock" value="<%= data[0].stock %>"
+                    required>
+                <label for="">Stock</label>
+            </div>
+            <div class="submit">
+                <button type="submit">Enviar</button>
+            </div>
+            </div>
+            </div>
+        </form>
+    </main>
+
+
+    <% include footer %>
